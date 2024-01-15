@@ -5,11 +5,14 @@ class Program
 {
     static void Main(string[] args)
     {
+        // Query for percentage
         Console.Write("Enter grade percentage: ");
         string gpa = Console.ReadLine();
         int percentage = int.Parse(gpa);
         string grade = "";
+        string sign = "";
 
+        // Determining grade letter
         if (percentage >= 90)
         {
             grade = "A";
@@ -32,11 +35,38 @@ class Program
 
         else if (percentage < 60)
         {
-            grade = "E";
+            grade = "F";
         }
 
+
+        // Determining the sign
+        if (percentage % 10 >= 7 ) 
+        {
+            sign = "+";
+        }
+        else if (percentage % 10  < 3) 
+        {
+            sign = "-";
+        }
+        else 
+        {
+            sign = "";
+        }
+
+        // Handling sign exceptions
+        if (grade == "A" && sign == "+" )
+        {
+            sign = "";
+        }
+
+        if (grade == "F")
+        {
+            sign = "";
+        }
+
+        // Grade output
         Console.WriteLine();
-        Console.WriteLine($"your grade is {grade}");
+        Console.WriteLine($"your grade is {grade}{sign}");
         Console.WriteLine();
 
 
