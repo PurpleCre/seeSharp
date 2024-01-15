@@ -12,5 +12,6 @@ class Program
 
         Console.WriteLine();
         Console.WriteLine($"Your name is {lName}, {fName} {lName}.");
+        Console.WriteLine();
     }
 }
