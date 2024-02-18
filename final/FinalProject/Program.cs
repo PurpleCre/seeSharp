@@ -5,6 +5,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello FinalProject World!");
+        Init init = new Init();
+
+        init.Display();
+
     }
 }
