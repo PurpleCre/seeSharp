@@ -8,9 +8,13 @@ public class Book
     private string _author;
     private string _genre;
     private string _synopsis;
-    private string _status;
-    private Person _borrowedBy;
+    private string _status = "Available";
+    private Person _borrowedBy = new Person();
 
+    public Book()
+    {
+
+    }
     public Book(string title, string author, string genre, string synopsis)
     {
         _title = title;
@@ -21,15 +25,27 @@ public class Book
 
     public void Display()
     {
-
+        string display = $"{_title} by {_author}\nGenre: {_genre}\n{_synopsis}\n";
+        Console.WriteLine(display);
     }
 
     public string IsAvailable()
     {
+        string type = _borrowedBy.GetType().ToString();
+
+        if (type == "Librarian")
+        {
+            _status = "Available";
+        }
+        else if (type == "Borrower")
+        {
+            _status = "Borrowed";
+        }
+
         return _status;
     }
 
-    public void BorrowedBy(Person person)
+    public void LendTo(Person person)
     {
         _borrowedBy = person;
     }
@@ -39,13 +55,20 @@ public class Book
         return _borrowedBy;
     }
 
+    public string GetGenre()
+    {
+        return _genre;
+    }
+
+    public string GetShortDisplay()
+    {
+        string display = $"{_title} by {_author}";
+        return display;
+    }
+
     public string GetStringRepresentation()
     {
         return "";
     }
 
-    public string GetGenre()
-    {
-        return _genre;
-    }
 }

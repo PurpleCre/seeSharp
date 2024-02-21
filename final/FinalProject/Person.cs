@@ -5,7 +5,12 @@ public class Person
 {
     private string _fName;
     private string _lName;
-    private int _age;
+    protected int _age;
+
+    public Person()
+    {
+
+    }
 
     public Person(string fname, string lname, int age)
     {
@@ -14,17 +19,26 @@ public class Person
         _age = age; ;
     }
 
-    public virtual void Display()
+    public virtual void Details()
     {
 
     }
 
     public string GetFullName()
     {
-        string fullname = $"{_fName} {_lName}";
+        string fullname = $"{_lName} {_fName}";
         return fullname;
     }
 
+    public virtual void SetPassword(string password)
+    {
+
+    }
+
+    public virtual string GetPassword()
+    {
+        return "";
+    }
     public virtual string GetStringRepresentation()
     {
         return "";

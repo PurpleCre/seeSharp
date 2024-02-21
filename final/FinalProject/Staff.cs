@@ -18,4 +18,9 @@ public class Staff
     {
         _librarians.Remove(librarian);
     }
+
+    public List<Librarian> GetLibrarians()
+    {
+        return _librarians;
+    }
 }
