@@ -10,3 +10,6 @@ This repository contains the starter code for many different projects. They are 
 * `final` - Starter projects for final project.
 
 Hail Hydra!!!!
+
+For my final project just be sure to provide numbers as responses for instances where a response is required and the possible responses are numbered.
+Thank you.
